@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>轮播</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./style/slip.css">
+<body>
+	<div class="top" id="all">
+		<div class="wra">
+			<ul id ="list" >
+			<li class="list_li " >
+				<img src="https://i0.hdslb.com/bfs/archive/2136694ef8d3950e0655e2bd6b97af90e043db60.jpg@880w_440h.jpg" >
+			</li>
+			<li class="list_li">
+				<img src="https://i0.hdslb.com/bfs/sycp/creative_img/201907/df3a5a872d7ff328cc42a39964488aba.jpg@880w_440h.jpg">
+			</li>
+			<li class="list_li" >
+				<img src="https://i0.hdslb.com/bfs/sycp/creative_img/201907/35ba31c99f71f2b1797bf60f17378c59.jpg@880w_440h.jpg">
+			</li>
+			<li class="list_li" >
+				<img src="https://i0.hdslb.com/bfs/archive/c8b77b980a4d77a98948d689c3873aaa11950932.jpg@880w_440h.jpg">
+			</li>
+			<li class="list_li">
+				<img src="https://i0.hdslb.com/bfs/archive/6dd9819b3cbce266cd01abae6645c6dca639d8b5.jpg@880w_440h.webp">
+			</li>
+			</ul>
+        </div>
+        <div class="more">
+            <a href="#">
+                更多
+            </a>
+        </div>
+		<ul class="point-list">
+			<li class=" point act" date-index = '0' ></li>
+			<li class=" point" date-index = '1'></li>
+			<li class=" point" date-index = '2'></li>
+			<li class=" point" date-index = '3'></li>
+			<li class=" point" date-index = '4'></li>
+		</ul>
+		
+	</div>
+<!-- <script src=" ../JS/jquery.min.js"></script> -->
+<script type="text/javascript">
+var points = document.getElementsByClassName('point');
+var list = document.getElementById("list");
+var all = document.getElementById('all');
+var lists = document.getElementsByClassName('list_li');
+var index = 0;
+// list.style.left='-718px';
+var clear = function () {
+	for( i = 0 ; i < points.length ; i++){
+		points[i].className='point';
+		list.style.transition = ' all 1s';
+	}
+}
+var go = function(){
+	clear();
+	console.log(list.style.transition);
+	list.style.left = -440 * ( index) +'px';
+	points[index].className = 'point act';
+}
+var nex = function(){
+	if( index <lists.length -1){
+		index++;
+			}
+	else{
+		index = 0;
+		
+			}
+		go();
+		}
+var pre = function(){
+	if(index == 0){
+		index = lists.length -1;
+		
+			}
+	else{
+		index--;
+			}
+		go();
+		}
+for(i = 0 ; i <points.length ; i++){
+	points[i].addEventListener('click',function(){
+		index = this.getAttribute('date-index');
+		go();
+	})
+}
+var play = function(){
+	console.log("a");
+	timer = setInterval(function(){
+		nex();
+	},2000)
+}
+var stop  = function(){
+	console.log("c");
+	clearInterval(timer);
+}
+play()
+all.onmouseover = stop;
+all.onmouseout = play;
+</script>
+
+</body>
+</html>

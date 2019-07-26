@@ -1,0 +1,97 @@
+
+  *{
+    padding: 0;margin: 0;
+  }
+  .top{
+    width: 440px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .wra{
+    width:2200px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+    transition: all 2s ;
+  
+  }
+  #list{
+    width: 2200px;
+    height:220px;
+    margin:  0 auto;
+    padding-left: 0;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    transition: all 1s;
+  
+  }
+  #list li {
+    padding-left: 0;
+    float:left;
+    z-index: 10000;
+  }
+  #list li img{
+    display: block;
+    width: 440px;
+    height: 220px;
+  }
+  
+  .point-list{
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    list-style: none;
+    z-index: 10000;
+  }
+  .point{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+    cursor: pointer;
+    background: url(https://static.hdslb.com/images/base/icons.png) -855px -790px ;
+    background-color: transparent;
+
+  }
+  .more{
+      position: absolute;
+      right: 15px;
+      bottom: 35px;
+      color: #fff;
+      background: rgba(0, 0, 0, .64);
+      width: 50px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 4px;
+      opacity: 0;
+      padding-left: 8px;
+      transition: all .2s ;
+
+  }
+  .more a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .more::after{
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 12px;
+      margin: -2px 0 0 5px;
+      vertical-align: middle;
+      background: url(https://static.hdslb.com/images/base/icons.png) -541px -218px;
+  }
+  .wra:hover+.more{
+    opacity: 1;
+  }
+  .point:hover{
+      background-position: -919px -790px;
+  }
+  .act{
+   background-position: -855px -727px;
+  }
